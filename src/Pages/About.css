@@ -1,0 +1,549 @@
+.about-section {
+  scroll-margin-top: 100px;
+  background: #080808;
+  color: #fff;
+  padding: 100px 7%;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/axo1.webp") center / cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.about-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BLOC TITRE À DROITE */
+
+.about-header {
+  width: 85%;
+  margin-left: auto;
+  text-align: left;
+}
+
+.about-eyebrow {
+  color: #00d9ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.about-inner h2 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(55px, 9vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 0 0 20px;
+  background: linear-gradient(
+    100deg,
+    #a52cff,
+    #795cff,
+    #00d9ff,
+    #795cff,
+    #a52cff
+  );
+  background-size: 250% auto;
+  background-position: 0% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: axolotlFlow 12s ease-in-out infinite;
+}
+
+.about-intro {
+  max-width: 550px;
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* CONTENU À GAUCHE ET PLUS BAS */
+
+.about-content {
+  width: 55%;
+  margin-right: auto;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  text-align: left;
+}
+
+/* ABOUT HERO */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8%;
+  margin-bottom: 120px;
+}
+
+/* PHOTO */
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2%;
+  padding: 1px;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, #a52cff, #795cff, #00d9ff, #a52cff);
+  background-size: 250% 250%;
+  animation: axolotlFlow 12s ease-in-out infinite;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% center;
+  display: block;
+  border-radius: inherit;
+  filter: saturate(0.85) contrast(1.08);
+  transition: transform 0.7s ease;
+}
+
+/* ==========================
+   ABOUT CONTENT - 3 SECTIONS
+========================== */
+
+.about-block {
+  width: 100%;
+  position: relative;
+}
+
+/* PETITS LABELS */
+
+.about-label {
+  color: #00d9ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* TITRES DES SECTIONS */
+
+.about-block h3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(30px, 4vw, 55px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+  color: #fff;
+}
+
+.journey-second {
+  display: block;
+  margin-block-start: 24px !important;
+}
+
+/* TEXTES */
+
+.about-block > p:not(.about-label) {
+  color: #999;
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 670px;
+  margin: 0;
+  text-align: justify;
+}
+
+.about-block-2 {
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #292929;
+  padding-top: 20px;
+}
+
+/* PETITS LABELS */
+
+.about-label-2 {
+  color: #00d9ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* TITRES DES SECTIONS */
+
+.about-block-2 h3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(30px, 4vw, 55px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* TEXTES */
+
+.about-block-2 > p:not(.about-label) {
+  color: #999;
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 670px;
+  margin: 0;
+  text-align: justify;
+}
+
+/* ==========================
+   SERVICES - 3 COLUMNS
+========================== */
+
+.about-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px 65px;
+  margin-top: 45px;
+}
+
+.about-services > div {
+  border-top: 1px solid #292929;
+  padding-top: 20px;
+}
+
+.about-services h4 {
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin: 0 0 15px;
+}
+
+.about-services p {
+  color: #888;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  text-align: justify;
+}
+
+.journey-layout {
+  width: calc(100% / 0.55);
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 145px;
+}
+
+.journey-layout .about-block {
+  min-width: 0;
+}
+
+.journey-photo {
+  margin-top: 110px;
+  width: 85%;
+  max-width: 400px;
+  aspect-ratio: 7 / 5;
+  justify-self: center;
+  padding: 2px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #a52cff, #795cff, #00d9ff);
+  box-shadow: 0 0 22px rgba(121, 92, 255, 0.15);
+}
+
+.journey-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ==========================
+   SEPARATION VISUELLE
+========================== */
+
+.about-block:not(:first-child) {
+  padding-top: 20px;
+  border-top: 1px solid #222;
+}
+
+.about-gradient {
+  background: linear-gradient(
+    100deg,
+    #a52cff,
+    #795cff,
+    #00d9ff,
+    #795cff,
+    #a52cff
+  );
+  background-size: 250% auto;
+  background-position: 0% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: axolotlFlow 12s ease-in-out infinite;
+}
+
+.services-layout {
+  width: calc(100% / 0.55);
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 145px;
+}
+
+.services-photo {
+  margin-top: 200px;
+  width: 85%;
+  max-width: 400px;
+  aspect-ratio: 7 / 5;
+  justify-self: center;
+  padding: 2px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #a52cff, #795cff, #00d9ff);
+  box-shadow: 0 0 22px rgba(121, 92, 255, 0.15);
+}
+
+.services-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .about-section {
+    padding: 150px 6%;
+  }
+
+  .about-inner {
+    max-width: 100%;
+  }
+
+  .about-hero {
+    gap: 6%;
+    margin-bottom: 90px;
+  }
+
+  .about-header {
+    width: 100%;
+  }
+
+  .about-inner h2 {
+    font-size: clamp(55px, 9vw, 95px);
+  }
+
+  .about-content {
+    width: 100%;
+    gap: 90px;
+  }
+
+  .journey-layout,
+  .services-layout {
+    width: 100%;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+  }
+
+  .journey-photo,
+  .services-photo {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .about-services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .about-block-2 h3 {
+    white-space: normal;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .about-section {
+    scroll-margin-top: 70px;
+    padding: 60px 6% 60px;
+    min-height: auto;
+  }
+
+  /* ABOUT HERO */
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 60px;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-photo img {
+    object-position: center;
+  }
+
+  .about-header {
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-eyebrow {
+    font-size: 9px;
+    margin-bottom: 15px;
+  }
+
+  .about-inner h2 {
+    font-size: clamp(55px, 13vw, 85px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+  }
+
+  .about-intro {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* MAIN CONTENT */
+
+  .about-content {
+    width: 100%;
+    gap: 55px;
+  }
+
+  .journey-layout,
+  .services-layout {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  /* SECTION LABELS */
+
+  .about-label,
+  .about-label-2 {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+
+  /* SECTION TITLES */
+
+  .about-block h3,
+  .about-block-2 h3 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    white-space: normal;
+    margin-bottom: 25px;
+  }
+
+  .journey-second {
+    margin-block-start: 20px !important;
+  }
+
+  /* TEXT */
+
+  .about-block > p:not(.about-label),
+  .about-block-2 > p:not(.about-label) {
+    font-size: 14px;
+    line-height: 1.85;
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  /* JOURNEY & SERVICES IMAGES */
+
+  .journey-photo,
+  .services-photo {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    justify-self: stretch;
+  }
+
+  .journey-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .services-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* SERVICES */
+
+  .about-services {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 35px;
+  }
+
+  .about-services > div {
+    padding-top: 18px;
+  }
+
+  .about-services h4 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .about-services p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  /* SECTION SEPARATORS */
+
+  .about-block:not(:first-child) {
+    padding-top: 30px;
+  }
+
+  .about-block-2 {
+    padding-top: 30px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+  .about-section {
+    padding: 95px 5%;
+  }
+
+  .about-inner h2 {
+    font-size: 52px;
+  }
+
+  .about-block h3,
+  .about-block-2 h3 {
+    font-size: 30px;
+  }
+
+  .about-content {
+    gap: 65px;
+  }
+}

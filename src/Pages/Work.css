@@ -1,0 +1,750 @@
+/* ========================================
+   WORK SECTION
+======================================== */
+
+.work-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 7% 80px;
+  background:
+    radial-gradient(
+      ellipse at 15% 35%,
+      rgba(121, 92, 255, 0.09),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(0, 217, 255, 0.045),
+      transparent 40%
+    ),
+    #0d0a14;
+  color: white;
+  overflow: hidden;
+  scroll-margin-top: 75px;
+}
+
+/* ========================================
+   WORK HEADER
+======================================== */
+
+.work-header {
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.work-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.work-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a52cff;
+  box-shadow: 0 0 12px #a52cff;
+}
+
+.work-title {
+  font-size: clamp(55px, 9vw, 125px);
+  font-family: "Anton", sans-serif;
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.work-title span {
+  background: linear-gradient(100deg, #a52cff, #795cff, #00d9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.work-description {
+  max-width: 510px;
+  margin-top: 25px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #999;
+}
+
+/* ========================================
+   PROJECT GRID
+======================================== */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 25px;
+  row-gap: 180px;
+  margin-top: 100px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.project-card-featured,
+.project-card-reverse {
+  grid-column: 1 / -1;
+}
+
+/* ========================================
+   PROJECT LAYOUTS
+======================================== */
+
+.project-link {
+  display: grid;
+  gap: 55px;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* OSAER — IMAGE LEFT / TEXT RIGHT */
+
+.project-link-featured {
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto 380px;
+  align-items: stretch;
+}
+
+/* POLY R — TEXT LEFT / IMAGE RIGHT */
+
+.project-link-reverse {
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: auto 380px;
+  align-items: stretch;
+}
+
+/* Main project content participates in parent grid */
+
+.project-link-featured .project-main,
+.project-link-reverse .project-main {
+  display: contents;
+}
+
+/* ========================================
+   PROJECT INFO
+======================================== */
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 22px;
+  min-width: 0;
+}
+
+.project-info .work-eyebrow {
+  margin-bottom: 25px;
+}
+
+.project-info h3 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.project-info p {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #888;
+  margin: 0;
+  text-align: justify;
+}
+
+/* ========================================
+   FEATURED — OSAER
+======================================== */
+
+.project-link-featured .project-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.project-link-featured .project-visual-link {
+  grid-column: 1;
+  grid-row: 2;
+  transform: translateY(-35px);
+}
+
+.project-link-featured .project-description {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  transform: translateY(-35px);
+}
+
+/* ========================================
+   REVERSE — POLY R
+======================================== */
+
+.project-link-reverse .project-info {
+  grid-column: 2;
+  grid-row: 1;
+  align-items: flex-end;
+  text-align: justify;
+}
+
+.project-link-reverse .project-visual-link {
+  grid-column: 2;
+  grid-row: 2;
+  transform: translateY(-35px);
+}
+
+.project-link-reverse .project-description {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  transform: translateY(-35px);
+}
+
+/* ========================================
+   PROJECT VISUAL LINK
+======================================== */
+
+.project-visual-link {
+  display: block;
+  width: 100%;
+  height: 380px;
+  color: inherit;
+  text-decoration: none;
+  outline-offset: 5px;
+  min-width: 0;
+}
+
+/* ========================================
+   PROJECT VISUAL
+======================================== */
+
+.project-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #151515;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition:
+    transform 0.5s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+/* Dark overlay */
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    transparent 40%,
+    rgba(0, 0, 0, 0.35)
+  );
+  pointer-events: none;
+}
+
+.project-visual.project-osaer,
+.project-polyr,
+.project-ferdyan {
+  box-shadow:
+    0 0 35px rgba(165, 44, 255, 0.3),
+    0 0 70px rgba(165, 44, 255, 0.12);
+}
+
+/* ========================================
+   PROJECT BORDERS
+======================================== */
+
+.project-osaer,
+.project-polyr {
+  background: #111;
+}
+
+.project-visual-link:hover .project-visual {
+  border-color: transparent;
+
+  background:
+    linear-gradient(#080808, #080808) padding-box,
+    linear-gradient(110deg, #00d9ff, #795cff, #a52cff) border-box;
+
+  box-shadow:
+    0 0 15px rgba(0, 217, 255, 0.2),
+    0 0 25px rgba(165, 44, 255, 0.2);
+}
+/* ========================================
+   PROJECT HOVER
+======================================== */
+
+.project-visual-link:hover .project-visual {
+  transform: translateY(-5px);
+}
+
+.project-visual-link:hover .project-image {
+  transform: scale(1.01);
+}
+
+/* Keyboard accessibility */
+
+.project-visual-link:focus-visible,
+.project-visit:focus-visible {
+  outline: 1px solid #a879ff;
+  outline-offset: 5px;
+}
+
+.project-arrow {
+  position: absolute;
+  z-index: 2;
+  bottom: 25px;
+  right: 25px;
+  font-size: 25px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.project-visual-link:hover .project-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ========================================
+   PROJECT DESCRIPTION
+======================================== */
+
+.project-description {
+  min-width: 0;
+  padding: 10px 0;
+}
+
+.project-label {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #a879ff;
+  margin-bottom: 22px;
+}
+
+.project-description h3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 22px;
+}
+
+.project-description > p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #999;
+  max-width: 470px;
+  margin: 0 0 25px;
+  text-align: justify;
+}
+
+/* ========================================
+   SERVICES
+======================================== */
+
+.project-services {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  color: #777;
+  padding-top: 20px;
+  border-top: 1px solid #292929;
+}
+
+/* ========================================
+   VISIT WEBSITE
+======================================== */
+
+.project-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.project-visit span {
+  color: #00d9ff;
+  font-size: 17px;
+  transition: transform 0.3s ease;
+}
+
+.project-visit:hover {
+  color: #b88aff;
+}
+
+.project-visit:hover span {
+  transform: translate(4px, -4px);
+}
+
+/* ========================================
+   STANDARD PROJECTS
+======================================== */
+
+.project-card-standard {
+  grid-column: span 1;
+}
+
+/* ========================================
+   WORK FOOTER
+======================================== */
+
+.work-footer {
+  margin-top: 100px;
+  padding-top: 25px;
+  border-top: 1px solid #292929;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #888;
+}
+
+.work-footer span {
+  color: #00d9ff;
+}
+
+/* ========================================
+   OTHER PROJECTS — 2023
+======================================== */
+
+.other-projects {
+  margin-top: 180px;
+}
+
+.other-projects-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #292929;
+}
+
+.other-projects-header h3 {
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  background: linear-gradient(90deg, #ffffff 0%, #42dfff 50%, #a52cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #42dfff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(66, 223, 255, 0.5);
+}
+
+.other-projects-intro {
+  max-width: 810px;
+  margin-bottom: 50px;
+}
+
+.other-projects-intro p {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: #999;
+  margin: 0;
+  text-align: justify;
+}
+
+.other-projects-intro .disclaimer {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: #999;
+  text-align: justify;
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.other-project-card {
+  display: block;
+  min-width: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.other-project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  background: #151515;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.other-project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.other-project-image > span {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+  font-size: 22px;
+  color: #00d9ff;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.other-project-card p {
+  margin: 14px 0 0;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.other-project-card:hover .other-project-image {
+  transform: translateY(-5px);
+  border-color: #795cff;
+  box-shadow: 0 0 25px rgba(165, 44, 255, 0.2);
+}
+
+.other-project-card:hover img {
+  transform: scale(1.04);
+}
+
+.other-project-card:hover .other-project-image > span {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.other-project-card:hover p {
+  color: #00d9ff;
+}
+
+/* ========================================
+   RESPONSIVE — TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .project-link-featured {
+    grid-template-columns: 1.3fr 0.8fr;
+    grid-template-rows: auto 380px;
+    gap: 30px;
+  }
+
+  .project-link-reverse {
+    grid-template-columns: 0.8fr 1.3fr;
+    grid-template-rows: auto 380px;
+    gap: 30px;
+  }
+
+  .project-info .work-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .project-description h3 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .project-description > p {
+    font-size: 12px;
+    text-justify: none;
+    hyphens: none;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   RESPONSIVE — MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .work-section {
+    padding: 60px 6% 60px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    margin-top: 50px;
+  }
+
+  .project-card-featured,
+  .project-card-reverse,
+  .project-card-standard {
+    grid-column: 1;
+  }
+
+  .project-link-featured,
+  .project-link-reverse {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Restore normal project structure */
+
+  .project-link-featured .project-main,
+  .project-link-reverse .project-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Project info */
+
+  .project-link-featured .project-info,
+  .project-link-reverse .project-info {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+
+  .project-info .work-eyebrow {
+    margin-bottom: 20px;
+  }
+
+  /* Project image */
+
+  .project-link-featured .project-visual-link,
+  .project-link-reverse .project-visual-link {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 18 / 9;
+  }
+
+  .project-visual {
+    height: 100%;
+  }
+
+  .project-visual-link {
+    margin-top: 30px;
+  }
+
+  /* Description */
+
+  .project-link-featured .project-description,
+  .project-link-reverse .project-description {
+    width: 100%;
+    padding: 5px 0 15px;
+    align-self: auto;
+  }
+
+  .work-header {
+    margin-bottom: 45px;
+  }
+
+  .work-title {
+    font-size: 58px;
+  }
+
+  .project-number {
+    top: 18px;
+    left: 18px;
+  }
+
+  .project-arrow {
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .project-description h3 {
+    font-size: 38px;
+  }
+
+  .work-footer {
+    margin-top: 45px;
+  }
+
+  .other-projects {
+    margin-top: 20px;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .other-projects-intro p {
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    color: #999;
+    margin: 0;
+    text-align: justify;
+  }
+
+  .other-projects-intro .disclaimer {
+    font-size: 12px;
+  }
+
+  .other-project-image {
+    aspect-ratio: 18 / 10;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-visual,
+  .project-image,
+  .project-arrow,
+  .project-visit,
+  .project-visit span {
+    transition: none;
+  }
+}

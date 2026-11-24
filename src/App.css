@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
