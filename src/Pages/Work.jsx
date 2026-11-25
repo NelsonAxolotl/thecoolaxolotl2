@@ -10,7 +10,7 @@ const projects = [
       fr: "COMPAGNIE DE DANSE CONTEMPORAINE",
     },
     className: "project-osaer",
-    image: "/os.png",
+    image: "/OS.webp",
     url: "https://www.cieosaer.com/",
     description: {
       en: "From visual identity to development, an immersive website designed to showcase the Osaer company's choreographic creations and its dance awareness initiatives for young audiences.",
@@ -34,7 +34,7 @@ const projects = [
       fr: "COMPAGNIE LYRIQUE",
     },
     className: "project-polyr",
-    image: "/polyr2.png",
+    image: "/polyr2.webp",
     url: "https://www.compagniepolyr.fr/",
     description: {
       en: "A playful website that reimagines the codes of opera, making it more accessible to all and presenting its productions in a new light.",
@@ -58,7 +58,7 @@ const projects = [
       fr: "PORTFOLIO D'ARTISTE",
     },
     className: "project-ferdyan",
-    image: "/fer.png",
+    image: "/fer.webp",
     url: "https://www.emmanuelleferdyan.com/",
     description: {
       en: "A refined portfolio showcasing Emmanuelle Ferdyan's work, artistic sensibility and distinctive creative universe.",
@@ -222,7 +222,7 @@ export default function Work() {
             className="other-project-card"
           >
             <div className="other-project-image">
-              <img src="/mon.png" alt="Rando website concept" />
+              <img src="/mon.webp" alt="Rando website concept" />
               <span>↗</span>
             </div>
             <p>RANDO</p>
@@ -235,7 +235,7 @@ export default function Work() {
             className="other-project-card"
           >
             <div className="other-project-image">
-              <img src="/trip.png" alt="Tripadvisor Angola website concept" />
+              <img src="/trip.webp" alt="Tripadvisor Angola website concept" />
               <span>↗</span>
             </div>
             <p>TRIPADVISOR ANGOLA</p>
@@ -248,7 +248,7 @@ export default function Work() {
             className="other-project-card"
           >
             <div className="other-project-image">
-              <img src="/game.png" alt="Gaming website concept" />
+              <img src="/game.webp" alt="Gaming website concept" />
               <span>↗</span>
             </div>
             <p>GAMING</p>

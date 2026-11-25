@@ -91,7 +91,7 @@ export default function About() {
         <div className="about-hero">
           {/* PHOTO */}
           <div className="about-photo">
-            <img src="/nelson.png" alt="Looking out over the mountains" />
+            <img src="/nelson.webp" alt="Looking out over the mountains" />
           </div>
 
           {/* TITLE */}
@@ -156,7 +156,7 @@ export default function About() {
             </article>
 
             <div className="services-photo">
-              <img src="/crea.png" alt="Web design and creative workspace" />
+              <img src="/crea.webp" alt="Web design and creative workspace" />
             </div>
           </div>
 
